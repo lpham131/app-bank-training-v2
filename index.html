@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banque De France</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app/main.js" defer></script>
+</head>
+
+<body>
+    <header class="menu">
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <a href="#page-accueil" class="brand-logo"><img class="headerNavBar-logo left"
+                        src="app/image/Banque_de_France_Logo.svg.png" style="height:60px"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#"><i class="material-icons">help_outline</i></a></li>
+                    <li><a href="#"><i class="material-icons">vpn_key</i></a></li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul class="tabs tabs-transparent center">
+                    <li class="tab"><a href="#page-clients">Clients</a></li>
+                    <li class="tab"><a href="#page-comptes">Comptes</a></li>
+                    <li class="tab"><a href="#page-creation">Nouveau</a></li>
+                    <li class="tab"><a href="#page-virement">Virement</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#"><i class="material-icons">help_outline</i></a></li>
+            <li><a href="#"><i class="material-icons">vpn_key</i></a></li>
+        </ul>
+    </header>
+
+    <Main>
+        <section id="page-accueil" class="display">
+            <div class="row">
+                <div class="col s12 m6 l2">
+                    <div class="card small">
+                        <div class="card-content white-text">
+                            <span class="card-title">CLIENTS</span>
+                            <p>Liste des clients</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#page-clients">acceder à la liste</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l2">
+                    <div class="card small">
+                        <div class="card-content white-text">
+                            <span class="card-title">COMPTES</span>
+                            <p>Liste des comptes</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#page-comptes">acceder à la liste</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l2">
+                    <div class="card small">
+                        <div class="card-content white-text">
+                            <span class="card-title">NOUVEAU</span>
+                            <p>Creation d'un nouveau client ou un nouveau compte</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#page-creation">formulaire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l2">
+                    <div class="card small">
+                        <div class="card-content white-text">
+                            <span class="card-title">VIREMENT</span>
+                            <p>Effectuer un virement entre deux comptes</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#page-virement">details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-clients">
+            <div class="row">
+                <form id="form-page-clients" method="POST" action="" autocomplete="off" class="form col s12">
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <i class="material-icons prefix light-blue-text">search</i>
+                            <input type="text" id="recherche-client" name="recherche-client"
+                                placeholder="Votre recherche" class="materialize-textarea white-text">
+                        </div>
+                    </div>
+                </form>
+                <div class="col s12 m6 l2">
+                    <a href="#page-info-client">
+                        <div class="card horizontal">
+                            <div class="card-content white-text">
+                                <span class="card-title">NOM Prenom</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-comptes">
+            <div class="row">
+                <form id="form-page-comptes" method="POST" action="" autocomplete="off" class="form col s12">
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <i class="material-icons prefix light-blue-text">search</i>
+                            <input type="text" id="recherche-compte" name="recherche-compte"
+                                placeholder="Votre recherche" class="materialize-textarea white-text">
+                        </div>
+                    </div>
+                </form>
+                <div class="col s12 m6 l2">
+                    <a href="#page-releve-compte">
+                        <div class="card horizontal">
+                            <div class="card-content white-text">
+                                <span class="card-title">N° du compte</span>
+                                <p>Type de compte</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-info-client">
+            <div class="row">
+                <h5>Informations Client</h5>
+                    <p>NOM Prénom</p>
+                <h5>Liste des comptes du client</h5>
+                <table class="highlight centered responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Type de compte</th>
+                            <th>IBAN</th>
+                            <th>N° du compte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Livret A</td>
+                            <td>FR1234567891012</td>
+                            <td>12345</td>
+                        </tr>
+                        <tr>
+                            <td>Compte-courant</td>
+                            <td>FR2345678910123</td>
+                            <td>23456</td>
+                        </tr>
+                        <tr>
+                            <td>Assurance vie</td>
+                            <td>FR3456789101234</td>
+                            <td>34567</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="page-releve-compte">
+            <div class="row">
+                <h5>Relevé du compte n°</h5>
+                    <p>Titulaire : <span>Nom prénom</span></p>
+                    <p>Type de compte : <span>Livret A</span></p>
+                    <p>IBAN : <span>FR1234567891010</span></p>
+                <table class="highlight centered responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Libellé</th>
+                            <th>Montant</th>
+                            <th>Débit/Crédit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>22.12.2020</td>
+                            <td>Eclair</td>
+                            <td>+ 0.87 €</td>
+                            <td>Crédit</td>
+                          </tr>
+                          <tr>
+                            <td>03.01.2021</td>
+                            <td>Jellybean</td>
+                            <td>- 3.76 €</td>
+                            <td>Débit</td>
+                          </tr>
+                          <tr>
+                            <td>07.01.2021</td>
+                            <td>CAF</td>
+                            <td>+ 7.00 €</td>
+                            <td>Crédit</td>
+                          </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row solde">
+                <p>Solde : <span>4.11 €</span></p>
+            </div>
+        </section>
+
+        <section id="page-creation">
+            <div class="row">
+                <div class="col s12 m6 l2">
+                    <div class="card small">
+                        <div class="card-content white-text">
+                            <span class="card-title">CLIENTS</span>
+                            <p>Création d'un nouveau client</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#page-creation-client">Formulaire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l2">
+                    <div class="card small">
+                        <div class="card-content white-text">
+                            <span class="card-title">COMPTES</span>
+                            <p>Création d'un nouveau compte</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#page-creation-compte">formulaire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-creation-client">
+            <div class="row">
+                <form id="form-page-creation-client" method="POST" action="" autocomplete="off" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="nom" type="text" class="validate white-text" placeholder="Nom de famille">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="nom_epouse" type="text" class="validate white-text" placeholder="Nom d'épouse">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="prenom" type="text" class="validate white-text" placeholder="Prénom">
+                        </div>
+                    </div>
+                    <div class="row birth">
+                        <div class="input-field col s6">
+                            <input id="birthday" type="text" class="datepicker white-text"
+                                placeholder="Date de naissance">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="email" type="email" class="validate white-text" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center">
+                            <button class="btn waves-effect waves-light" type="reset" name="action">Effacer
+                                <i class="material-icons right">clear</i>
+                            </button>
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Enregistrer
+                                <i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="page-creation-compte">
+            <div class="row">
+                <form id="form-page-creation-compte" method="POST" action="" autocomplete="off" class="col s12">
+                    <div class="row">
+                        <div class="radio-btn">
+                            <p>Type du compte à créer :</p>
+                            <label>
+                                <input class="with-gap" name="type-compte" type="radio" />
+                                <span>Compte-courant</span>
+                            </label>
+                            <label>
+                                <input class="with-gap" name="type-compte" type="radio" />
+                                <span>Livret A</span>
+                            </label>
+                            <label>
+                                <input class="with-gap" name="type-compte" type="radio" />
+                                <span>Assurance vie</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="num-compte" type="text" class="validate white-text"
+                                placeholder="Numéro de compte">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="iban" type="text" class="validate white-text" placeholder="IBAN">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center">
+                            <button class="btn waves-effect waves-light" type="reset" name="action">Effacer
+                                <i class="material-icons right">clear</i>
+                            </button>
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Enregistrer
+                                <i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="page-virement">
+            <div class="row">
+                <form id="form-page-virement" method="POST" action="" autocomplete="off" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s5">
+                            <select name="emetteur" id="emetteur" class="browser-default" required>
+                                <option value="">Emetteur</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s5">
+                            <select name="destinataire" id="destinataire" class="browser-default" required>
+                                <option value="">Destinataire</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="montant" type="number" class="validate white-text" placeholder="Montant (€)"
+                                required>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="libelle" type="text" class="validate white-text" placeholder="Libellé">
+                        </div>
+                    </div>
+                    <div class="center">
+                        <button class="btn waves-effect waves-light" type="reset" name="action">Effacer
+                            <i class="material-icons right">clear</i>
+                        </button>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Valider
+                            <i class="material-icons right">done</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="page-plan-site">
+            <div class="row">
+                <div class="col s11">
+                    <h1>Plan du site</h1>
+                    <div class="collection">
+                        <a href="#page-accueil" class="collection-item">Accueil</a>
+                        <a href="#page-clients" class="collection-item">Clients</a>
+                        <a href="#page-comptes" class="collection-item">Comptes</a>
+                        <a href="#page-creation" class="collection-item">Nouveau</a>
+                        <a href="#page-virement" class="collection-item">Virement</a>
+                    </div>
+                </div>
+                <div class="col s11">
+                    <h3>Autre</h3>
+                    <div class="collection">
+                        <a href="#!" class="collection-item">A propos</a>
+                        <a href="#!" class="collection-item">Mentions légales</a>
+                        <a href="#!" class="collection-item">Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </Main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <a href="#page-accueil" class="brand-logo center">
+                <img class="footerNavBar-logo" src="app/image/logo.svg" style="height:80px">
+            </a>
+        </div>
+        <div class="container">
+            <ul class="tabs tabs-transparent center">
+                <li class="tab"><a href="#">A propos</a></li>
+                <li class="tab"><a href="#">Mentions légales</a></li>
+                <li class="tab"><a href="#">Nous contacter</a></li>
+                <li class="tab"><a href="#page-plan-site">Plan du site</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

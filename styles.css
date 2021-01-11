@@ -1,0 +1,351 @@
+html {
+    --color-primary: #002966 ;
+    --color-primary-text: white;
+    --color-primary-border: #03a9f4;
+    --color-primary-shadow: rgba(68, 68, 68, 0.5);
+    --color-secondary: black;
+    --color-components:rgba(0, 0, 0, 0.397);
+}
+body {
+    background-color: var(--color-primary);
+}
+::placeholder {
+    color: unset;
+    color: var(--color-primary-border);
+}
+/* -------------------------Template Grid Layout--------------------------- */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+main > section {
+    display: none;
+}
+main > section:target {
+    display: unset;
+}
+/* ---------------------------Cards Components------------------------------ */
+.card {
+    background-color: var(--color-components);
+}
+.card p {
+    padding-top: 1em;
+}
+.card:hover {
+    transition: all 0.2s ease-out;
+    top: -4px;
+    transform: scale(1.05);
+    border: 1.5px solid var(--color-primary-border);
+}
+.card-action:hover {
+    background-color: var(--color-primary-shadow);
+}
+/* -------------------------Buttons Components----------------------------- */
+.btn {
+    background-color: unset;
+    background-color: var(--color-components);
+    color: unset;
+    color: var(--color-primary-border);
+}
+.btn:hover {
+    background-color: unset;
+    background-color: var(--color-primary-border);
+    color: var(--color-primary-text);
+}
+/* ------------------------Radio-btn Components---------------------------- */
+.radio-btn {
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.radio-btn p {
+    font-size: 18px;
+    color: var(--color-primary-text);
+}
+.radio-btn span {
+    color: var(--color-primary-border);
+}
+[type="radio"]:checked+span {
+    color: unset;
+    color: var(--color-primary-text);
+
+}
+[type="radio"]:checked+span:after, 
+[type="radio"].with-gap:checked+span:after {
+    background-color: unset;
+    background-color: var(--color-primary-border);
+    
+}
+[type="radio"]:checked+span:after, 
+[type="radio"].with-gap:checked+span:before, 
+[type="radio"].with-gap:checked+span:after {
+    border: unset;
+    border: 2px solid var(--color-primary-border);
+}
+/* ---------------------------------Menu----------------------------------- */
+header > nav > .nav-wrapper {
+    background-color: var(--color-secondary);
+}
+header > nav > .nav-content {
+    border-top: grey solid 1px;
+    background-color: var(--color-primary);
+}
+header > nav > .nav-wrapper > .container {
+   padding-top: .5em;
+}
+header > nav > .nav-content > .tabs-transparent {
+    margin:unset;
+    padding: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.headerNavBar-logo {
+    padding-left: 2em;
+    padding-top: 0.3em;
+    padding-bottom: 0.15em;
+}
+/* ------------------------------page-accueil----------------------------- */
+#page-accueil .row {
+    margin:unset;
+    padding: unset;
+    padding-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#page-accueil .col {
+    margin-left: unset;
+}
+/* ------------------------------page-clients----------------------------- */
+#page-clients > .row {
+    padding-top: 1em;
+    padding-left: 2em;
+}
+#page-clients > .row input:focus {
+    border-bottom: unset;
+    border-bottom: 1px solid var(--color-primary-border);
+}
+/* ------------------------------page-comptes----------------------------- */
+#page-comptes p {
+    padding-top: unset;
+}
+#page-comptes > .row {
+    padding-top: 1em;
+    padding-left: 2em;
+}
+#page-comptes > .row input:focus {
+    border-bottom: unset;
+    border-bottom: 1px solid var(--color-primary-border);
+}
+/* ----------------------------page-info-client--------------------------- */
+#page-info-client {
+    color: var(--color-primary-text);
+}
+#page-info-client > .row {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+#page-info-client > .row h5 {
+    color: var(--color-primary-border);
+}
+#page-info-client > .row p {
+    padding-left: 3em;
+    padding-bottom: 1em;
+    font-size: 18px;
+}
+#page-info-client table tr {
+    border-collapse: collapse;
+    white-space: nowrap;
+    border-bottom: unset;
+    border-bottom: 1px solid var(--color-primary-border);
+}
+#page-info-client table th {
+    color: var(--color-primary-border);
+    text-transform: uppercase;
+}
+/* ---------------------------page-releve-compte-------------------------- */
+#page-releve-compte {
+    color: var(--color-primary-text);
+}
+#page-releve-compte > .row {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+#page-releve-compte > .row h5 {
+    color: var(--color-primary-border);
+}
+#page-releve-compte > .row p {
+    padding-left: 3em;
+    padding-bottom: 1em;
+    font-size: 18px;
+    color: var(--color-primary-border);
+}
+#page-releve-compte > .row span {
+    color: var(--color-primary-text);
+}
+#page-releve-compte table tr {
+    border-collapse: collapse;
+    white-space: nowrap;
+    border-bottom: unset;
+    border-bottom: 1px solid var(--color-primary-border);
+}
+#page-releve-compte table th {
+    color: var(--color-primary-border);
+    text-transform: uppercase;
+}
+#page-releve-compte > .right {
+    padding-top: 1em;
+    padding-right: 5em;
+}
+/* ------------------------------page-creation---------------------------- */
+#page-creation .row {
+    margin:unset;
+    padding: unset;
+    padding-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#page-creation .col {
+    margin-left: unset;
+}
+/* -------------------------page-creation-client-------------------------- */
+#page-creation-client #form-page-creation-client > .row {
+    margin:unset;
+    padding: unset;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#page-creation-client #form-page-creation-client .row .input-field {
+    margin: unset;
+    padding: unset;
+}
+#page-creation-client > .row input:focus {
+    border-bottom: unset;
+    border-bottom: 1px solid var(--color-primary-border);
+}
+/* -------------------------page-creation-compte-------------------------- */
+#page-creation-compte #form-page-creation-compte .row {
+    margin:unset;
+    padding: unset;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#page-creation-compte #form-page-creation-compte .row .input-field {
+    margin: unset;
+    padding: unset;
+}
+#page-creation-compte > .row input:focus {
+    border-bottom: unset;
+    border-bottom: 1px solid var(--color-primary-border);
+}
+/* -----------------------------page-virement----------------------------- */
+#page-virement #form-page-virement .row {
+    margin:unset;
+    padding: unset;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#page-virement #form-page-virement .row .input-field {
+    margin: unset;
+    padding: unset;
+    padding: 1em;
+}
+#page-virement #form-page-virement select {
+    border: 1px solid var(--color-primary-border);
+    color: var(--color-primary-border);
+    background-color: white;
+}
+
+#page-virement > .row input:focus {
+    border-bottom: unset;
+    border-bottom: 1px solid var(--color-primary-border);
+}
+/* ----------------------------page-plan-site----------------------------- */
+#page-plan-site {
+    color: var(--color-primary-text);
+}
+#page-plan-site h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+#page-plan-site h3 {
+    font-weight: 350;
+}
+#page-plan-site .row {
+    padding-left: 2em;
+}
+#page-plan-site .collection {
+    padding-left: 2em;
+    border: unset;
+}
+#page-plan-site .collection > a {
+    background-color: unset;
+    color: var(--color-primary-border);
+    font-size: 18px;
+    font-weight: 380;
+}
+/* -------------------------------Footer---------------------------------- */
+.page-footer {
+    background-color: var(--color-secondary); 
+    border-top: solid 1px grey;
+}
+.page-footer .container .tabs-transparent {
+    margin:unset;
+    padding: unset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.footerNavBar-logo{
+    display: block;
+    position: relative;
+    margin: 0.5em auto;
+}
+/* -------------------------Responsive Web Design---------------------------- */
+@media screen and (max-width : 992px) {
+    #page-info-client table tr {
+        border-bottom: unset;
+        border-top: unset;
+    }
+    #page-info-client table th {
+        border-right: 1px solid var(--color-primary-border);
+    }
+    #page-releve-compte table tr {
+        border-bottom: unset;
+        border-top: unset;
+    }
+    #page-releve-compte table th {
+        border-right: 1px solid var(--color-primary-border);
+    }
+    #page-releve-compte .solde {
+        margin:unset;
+        text-align: left;
+        padding-left: 8em;
+    }
+}
